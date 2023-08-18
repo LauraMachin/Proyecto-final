@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Camperas
+{% endblock titulo %}
+
+{% block cabecera %}
+     Camperas
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for camperas in camperas %}
+    <tr>
+        <td> {{ camperas.id }} </td>
+        <td> {{ camperas.marca }} </td>
+        <td> {{ camperas.talle }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

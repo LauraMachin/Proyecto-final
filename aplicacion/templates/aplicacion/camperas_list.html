@@ -1,0 +1,56 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+   Camperas
+{% endblock titulo %}
+
+{% block cabecera %}
+    Camperas
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for camperas in camperas %}
+    <tr>
+        <td> {{ pantalones.id }} </td>
+        <td> {{ pantalones.marca }} </td>
+        <td> {{ pantalones.talle }} </td>
+    <td with="200"><h2>Camperas</h2></td>
+    <div>
+        <a
+        
+        class="Camperas"
+        class="btn btn-primary" target="_blank" href="{% url 'update_camperas' camperas.id %}">
+        <i class="glyphicon glyphicon-file"></i> Pantalones </a>
+    
+    </div>
+        ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+        </a>
+        <a
+        href="{% url 'delete_camperas' camperas.id %}"
+                class="btn btn-primaty"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .Screm; --bs-btn-front-size: .7Srem;"
+        ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+        </a>
+        <a
+        href="{% url 'create_camperas' camperas.id %}"
+               class="btn btn-primaty"
+               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .Screm; --bs-btn-front-size: .7Srem;"
+        ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

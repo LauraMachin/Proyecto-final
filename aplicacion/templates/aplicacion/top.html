@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Top
+{% endblock titulo %}
+
+{% block cabecera %}
+     Top
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for top in top %}
+    <tr>
+        <td> {{ top.id }} </td>
+        <td> {{ top.marca }} </td>
+        <td> {{ top.talle }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Short
+{% endblock titulo %}
+
+{% block cabecera %}
+     Short
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for short in short %}
+    <tr>
+        <td> {{ short.id }} </td>
+        <td> {{ short.marca }} </td>
+        <td> {{ short.talle }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

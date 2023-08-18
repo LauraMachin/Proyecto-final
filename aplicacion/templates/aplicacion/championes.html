@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Championes
+{% endblock titulo %}
+
+{% block cabecera %}
+     Championes
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for championes in championes %}
+    <tr>
+        <td> {{ championes.id }} </td>
+        <td> {{ championes.marca }} </td>
+        <td> {{ championes.talle }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+
